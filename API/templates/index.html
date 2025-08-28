@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot - Threads</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>All Threads</h2>
+  <ul>
+    {% for t in threads %}
+      <li><a href="{{ url_for('chat_ui', thread_id=t['id']) }}">Thread {{t['id']}} - {{t['title']}}</a></li>
+    {% endfor %}
+  </ul>
+  <p><i>Use Postman for API testing, or click a thread to chat here.</i></p>
+</body>
+</html>
